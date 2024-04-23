@@ -20,7 +20,12 @@ This project provides a tool for signing APK files.
    chmod +x install.sh
    ```
 
-6. Run the `install.sh` file:
+5. Run the `install.sh` file:
    ```sh
    ./install.sh
+   ```
+6. You can delete folder SignApk:
+   ```sh
+   cd ..
+   rm -r SignApk
    ```
