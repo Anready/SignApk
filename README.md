@@ -29,3 +29,7 @@ This project provides a tool for signing APK files.
    cd ..
    rm -r SignApk
    ```
+7. Now you can run command 'sign':
+   ```sh
+   sign
+   ```
