@@ -14,22 +14,21 @@ This project provides a tool for signing APK files in Termux.
    cd SignApk
    ```
 
-3. Change the `pass` variable in the `sign` file to your password of keystore.
-4. Run:
+3. Run:
    ```sh
    chmod +x install.sh
    ```
 
-5. Run the `install.sh` file:
+4. Run the `install.sh` file:
    ```sh
    ./install.sh
    ```
-6. You can delete folder SignApk:
+5. You can delete folder SignApk:
    ```sh
    cd ..
    rm -r SignApk
    ```
-7. Now you can run command 'sign':
+6. Now you can run command 'sign':
    ```sh
    sign
    ```
