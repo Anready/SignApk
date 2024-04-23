@@ -1,0 +1,61 @@
+#!/bin/bash
+
+pass=YOUR_PASS_FOR_KEY
+
+echo "APK file name (without extension):"
+read apk
+
+if [ ! -e "$apk.apk" ]; then
+    echo "APK file $apk does not exist."
+    exit 1
+fi
+
+echo "Keystore file name:"
+read keystore
+
+echo "Listing keys in the keystore..."
+echo
+keytool -list -v -keystore $keystore -storepass $pass | grep "Alias name:"
+echo
+
+echo "Enter the name of the key you want to use:"
+read key
+
+echo "Creating a copy of $apk..."
+cp "$apk.apk" "$apk-unsigned.apk"
+if [ $? -eq 0 ]; then
+    echo "Success: Copy created"
+else
+    echo "Failed to create a copy of $apk" >&2
+    exit 1
+fi
+
+echo "Signing $apk.apk by $key in $keystore..."
+apksigner sign --ks $keystore --ks-pass pass:$pass --ks-key-alias $key "$apk.apk"
+if [ $? -eq 0 ]; then
+    echo "Success: APK signed"
+else
+    echo "Failed to sign $apk" >&2
+    echo "Deleting copy of $apk"
+    rm "$apk-unsigned.apk"
+    echo "Success"
+exit 1
+fi
+
+echo "Renaming signed APK..."
+mv "$apk.apk" "$apk-signed.apk"
+if [ $? -eq 0 ]; then
+    echo "Success: APK renamed"
+else
+    echo "Failed to rename signed APK" >&2
+    exit 1
+fi
+
+echo "Deleting temporary files..."
+rm "$apk.apk.idsig"
+if [ $? -eq 0 ]; then
+    echo "Success: Temporary files deleted"
+else
+    echo "Failed to delete temporary files" >&2
+    exit 1
+fi
