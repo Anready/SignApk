@@ -1,7 +1,7 @@
 pkg install openjdk-17 apksigner
 
 echo "Installing 'sign'"
-cp "sign" $HOME/..usr/bin/sign
+cp "sign" $HOME/../usr/bin/sign
 
 if [ $? -eq 0 ]; then
     echo "Success"
