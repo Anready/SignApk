@@ -14,7 +14,7 @@ This project provides a tool for signing APK files.
    cd SignApk
    ```
 
-3. Change the `pass` variable in the `sign` file to your password.
+3. Change the `pass` variable in the `sign` file to your password of keystore.
 
 4. Run the `install.sh` file:
    ```sh
