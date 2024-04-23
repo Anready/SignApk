@@ -15,8 +15,12 @@ This project provides a tool for signing APK files.
    ```
 
 3. Change the `pass` variable in the `sign` file to your password of keystore.
+4. Run:
+   ```sh
+   chmod +x install.sh
+   ```
 
-4. Run the `install.sh` file:
+6. Run the `install.sh` file:
    ```sh
    ./install.sh
    ```
