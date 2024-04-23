@@ -32,3 +32,16 @@ This project provides a tool for signing APK files in Termux.
    ```sh
    sign
    ```
+## Create a keystore 
+
+Enter this command and do everything as instructed:
+
+```sh
+keytool -genkeypair -v -keystore [NAME OF YOUR KEY].jks -keyalg RSA -keysize 2048 -validity 10000 -alias [NAME OF YOUR ALIAS]
+```
+
+OR
+
+```sh
+keytool -genkeypair -v -keystore [NAME OF YOUR KEYSTORE].keystore -keyalg RSA -keysize 2048 -validity 10000 -alias [NAME OF YOUR ALIAS]
+```
