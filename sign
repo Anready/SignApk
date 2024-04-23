@@ -1,6 +1,7 @@
 #!/bin/bash
 
-pass=YOUR_PASS_FOR_KEY
+echo "Password for keystore:"
+read pass
 
 echo "APK file name (without extension):"
 read apk
