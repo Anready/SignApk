@@ -1,6 +1,6 @@
-# SignApk Project
+# SignApk Termux
 
-This project provides a tool for signing APK files.
+This project provides a tool for signing APK files in Termux.
 
 ## Installation
 
