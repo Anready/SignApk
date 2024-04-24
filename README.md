@@ -45,3 +45,8 @@ OR
 ```sh
 keytool -genkeypair -v -keystore [NAME OF YOUR KEYSTORE].keystore -keyalg RSA -keysize 2048 -validity 10000 -alias [NAME OF YOUR ALIAS]
 ```
+
+## Add new keys to keystore
+
+'''sh
+keytool -genkeypair -alias [NAME OF NEW KEY] -keyalg RSA -keysize 2048  -validity [DAYS OF VALID KEY] -keystore [NAME OF YOUR KEYSTORE].jks
